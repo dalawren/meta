@@ -36,7 +36,7 @@ SOFTWARE.
 // static_assert(false);
 // --> file.cpp(1): error C2338: static assertion failed
 // 
-// so very helpful!
+// so very helpful! ;-)
 //
 // what would be nice is if the compiler included the expression in the error message:
 // static_assert(1 != 1);
@@ -51,7 +51,7 @@ SOFTWARE.
 // static_assert(1 != 1, "can't you be yourself?");
 // --> file.cpp(1): error C2338: static_assert(1 != 1, "can't you be yourself?")
 //
-// writing cross platform software targeting pre c++17 support it would be nice to allow the shoter form 
+// writing cross platform software targeting pre c++17 support it would be nice to allow the shorter form 
 // of static_assert, it would also be nice to get good error messages...can it be done?
 //
 // first attempt:
@@ -80,4 +80,4 @@ struct static_assert_helper {
     const char* description;
 };
 
-#define static_assert(...) static_assert(static_assert_helper{ __VA_ARGS__ }.condition, #__VA_ARGS__)
+#define static_assert(...) static_assert(static_assert_helper{ __VA_ARGS__ }.condition, "static_assert(" #__VA_ARGS__ ")")
