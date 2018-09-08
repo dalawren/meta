@@ -73,7 +73,7 @@ SOFTWARE.
 // constexpr bool first(bool condition, const char* description = nullptr) { return condition; }
 // #define static_assert(...) static_assert(first(__VA_ARGS__), "static_assert(" #__VA_ARGS__ ")")
 //
-// initalizer lists to the rescue...enjoy!
+// initializer lists to the rescue...enjoy!
 
 struct static_assert_helper {
     bool condition;
